@@ -12,6 +12,7 @@ import { SidenavListModule } from './shared/components/navigation/sidenav-list/s
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
 import { environment } from '../environments/environment';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,9 +25,10 @@ import { environment } from '../environments/environment';
     FooterModule,
     MaterialModule,
     FlexLayoutModule,
-    environment.production ?
-        [] :
-        [ AkitaNgDevtools.forRoot(), AkitaNgRouterStoreModule.forRoot() ]
+    CoreModule,
+    environment.production
+      ? []
+      : [AkitaNgDevtools.forRoot(), AkitaNgRouterStoreModule.forRoot()]
   ],
   providers: [],
   bootstrap: [AppComponent]

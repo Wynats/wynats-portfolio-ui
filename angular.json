@@ -139,5 +139,10 @@
   "defaultProject": "wynats-portfolio-ui",
   "cli": {
     "defaultCollection": "@datorama/akita"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
   }
 }
