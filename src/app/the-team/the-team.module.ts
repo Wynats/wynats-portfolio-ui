@@ -4,6 +4,8 @@ import { TheTeamRoutingModule } from './the-team-routing.module';
 import { MaterialModule } from '../shared';
 import { WorkersListComponent } from './containers/workers-list/workers-list.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { WorkerService } from './state/worker';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [WorkersListComponent],
@@ -11,7 +13,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     TheTeamRoutingModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ]
 })
 export class TheTeamModule {}

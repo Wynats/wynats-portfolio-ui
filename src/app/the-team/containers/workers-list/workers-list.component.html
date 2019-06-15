@@ -1,13 +1,15 @@
 <div fxLayout="column" fxLayoutGap="10px">
+  {{workers$ | async | json}}
   <div class="workers-container mat-elevation-z4" matRipple>
     <p>
       workers-list works!
     </p>
   </div>
-  <div class="workers-container mat-elevation-z4" matRipple (click)="updateUser()">
+  <div class="workers-container mat-elevation-z4" matRipple>
     <p>
       workers-list works!
     </p>
   </div>
 </div>
-{{sessionQuery.loggedInUser$ | async | json}}
+
+{{workerQuery.workersData$ | async | json}}
