@@ -6,9 +6,11 @@ import { WorkersListComponent } from './containers/workers-list/workers-list.com
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { WorkerService } from './state/worker';
 import { HttpClientModule } from '@angular/common/http';
+import { WorkersVisualizerComponent } from './components/workers-visualizer/workers-visualizer.component';
+import { WorkerDetailComponent } from './components/worker-detail/worker-detail.component';
 
 @NgModule({
-  declarations: [WorkersListComponent],
+  declarations: [WorkersListComponent, WorkersVisualizerComponent, WorkerDetailComponent],
   imports: [
     CommonModule,
     TheTeamRoutingModule,

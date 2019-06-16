@@ -1,6 +1,6 @@
-.workers-container {
-  cursor: pointer;
-  width: 200px;
-  text-align: center;
+::ng-deep {
+  .workers-container {
+    width: 200px;
+  }
 
 }

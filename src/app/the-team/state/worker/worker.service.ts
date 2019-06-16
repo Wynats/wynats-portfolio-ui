@@ -29,6 +29,10 @@ export class WorkerService {
     return request;
   }
 
+  selectWorker(worker: Worker) {
+    this.workerQuery.workerSelected$.next(worker);
+  }
+
   add(worker: Worker) {
     this.workerStore.add(worker);
   }
