@@ -1,8 +1,10 @@
-<div *ngIf="worker">
+<div class="worker-detail" *ngIf="worker">
   <p>Nombre: {{worker.name}}</p>
   <p>Descripcion: {{worker.description}}</p>
   <p>Skills:</p>
-  <p *ngFor="let skill of worker.skills | keyvalue">
-    {{skill.key}}:{{skill.value}}
-  </p>
+  <div *ngFor="let skill of worker.skills | keyvalue">
+    {{skill.key}}<mat-progress-bar class="example-margin" color="warn" [value]="skill.value"
+      [bufferValue]="skill.value">
+    </mat-progress-bar>
+  </div>
 </div>

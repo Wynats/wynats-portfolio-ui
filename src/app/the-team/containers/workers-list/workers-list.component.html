@@ -1,5 +1,6 @@
-<div fxLayout="row" fxLayoutGap="60px">
+<div class="container" fxLayout="row" fxLayoutGap="60px">
 
-  <wyn-workers-visualizer class="workers-visualizer" [workers]="workers$ | async"></wyn-workers-visualizer>
-  <wyn-worker-detail [worker]="workerQuery.workerSelected$ | async"></wyn-worker-detail>
+  <wyn-workers-visualizer fxFlex="20" class="workers-visualizer" [workers]="workers$ | async">
+  </wyn-workers-visualizer>
+  <wyn-worker-detail fxFlex="80" [worker]="workerQuery.workerSelected$ | async"></wyn-worker-detail>
 </div>
