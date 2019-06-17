@@ -1,5 +1,6 @@
 <div fxLayout="column" fxLayoutGap="10px">
-  <div class="workers-container mat-elevation-z4" *ngFor="let worker of workers"
+  <div class="workers-container mat-elevation-z4"
+    [ngClass]="{'workerSelected': (workerQuery.workerSelected$ | async)===worker}" *ngFor="let worker of workers"
     (click)="workerService.selectWorker(worker)" matRipple>
     <p>
       {{worker.name}}

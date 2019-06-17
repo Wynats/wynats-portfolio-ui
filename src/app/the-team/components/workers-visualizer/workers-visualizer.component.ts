@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Worker, WorkerService } from '../../state/worker';
+import { Worker, WorkerService, WorkerQuery } from '../../state/worker';
 
 @Component({
   selector: 'wyn-workers-visualizer',
@@ -9,7 +9,10 @@ import { Worker, WorkerService } from '../../state/worker';
 export class WorkersVisualizerComponent implements OnInit {
   @Input() workers: Worker[];
 
-  constructor(public workerService: WorkerService) {}
+  constructor(
+    public workerService: WorkerService,
+    public workerQuery: WorkerQuery
+  ) {}
 
   ngOnInit() {}
 }

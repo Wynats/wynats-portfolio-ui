@@ -21,7 +21,7 @@ export class WorkerService {
       tap(w => {
         this.workerStore.set(
           w.map(worker => {
-            return new Worker(worker.name, worker.description);
+            return new Worker(worker.name, worker.description, worker.skills);
           })
         );
       })

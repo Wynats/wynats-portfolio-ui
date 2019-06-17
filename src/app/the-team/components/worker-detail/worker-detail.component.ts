@@ -4,7 +4,7 @@ import { Worker, WorkerQuery } from '../../state/worker';
 @Component({
   selector: 'wyn-worker-detail',
   templateUrl: './worker-detail.component.html',
-  styleUrls: ['./worker-detail.component.css']
+  styleUrls: ['./worker-detail.component.scss']
 })
 export class WorkerDetailComponent implements OnInit {
   @Input() worker: Worker;

@@ -1,9 +1,13 @@
 import { ContentList } from 'src/app/shared/models';
-import { ID, guid } from '@datorama/akita';
+import { ID, guid, HashMap } from '@datorama/akita';
 
 export class Worker extends ContentList {
   public id: ID;
-  constructor(public name: string, public description: string) {
+  constructor(
+    public name: string,
+    public description: string,
+    public skills: HashMap<number>
+  ) {
     super();
     this.id = guid();
   }
