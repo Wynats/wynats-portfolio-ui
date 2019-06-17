@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ID } from '@datorama/akita';
 import { HttpClient } from '@angular/common/http';
 import { WorkerStore } from './worker.store';
-import { Worker } from './worker.model';
+import { Worker, WorkerUI } from './worker.model';
 import { tap, map } from 'rxjs/operators';
 import { WorkerDataService } from './worker-data.service';
 import { Observable, noop } from 'rxjs';
@@ -21,7 +21,7 @@ export class WorkerService {
       tap(w => {
         this.workerStore.set(
           w.map(worker => {
-            return new Worker('', worker.name, worker.description);
+            return new Worker(worker.name, worker.description);
           })
         );
       })
@@ -30,7 +30,7 @@ export class WorkerService {
   }
 
   selectWorker(worker: Worker) {
-    this.workerQuery.workerSelected$.next(worker);
+    this.workerStore.update({ ui: new WorkerUI(worker) });
   }
 
   add(worker: Worker) {

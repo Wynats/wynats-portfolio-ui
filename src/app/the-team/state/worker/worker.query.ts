@@ -10,7 +10,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class WorkerQuery extends QueryEntity<WorkerState, Worker> {
   workersData$ = this.selectAll().pipe(map(this.getWorkersData.bind(this)));
-  workerSelected$ = new BehaviorSubject<Worker>(null);
+  workerSelected$ = this.select(state => state.ui.workerSelected);
+
   constructor(protected store: WorkerStore) {
     super(store);
   }
