@@ -8,6 +8,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatRippleModule } from '@angular/material/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   imports: [
@@ -18,7 +20,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatSidenavModule,
     MatListModule,
     MatRippleModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatDividerModule,
+    MatCardModule
   ],
   exports: [
     MatButtonModule,
@@ -28,7 +32,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatSidenavModule,
     MatListModule,
     MatRippleModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatDividerModule,
+    MatCardModule
   ]
 })
 export class MaterialModule {}

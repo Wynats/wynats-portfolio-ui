@@ -1,10 +1,37 @@
 <div class="worker-detail" *ngIf="worker">
-  <p>Nombre: {{worker.name}}</p>
-  <p>Descripcion: {{worker.description}}</p>
-  <p>Skills:</p>
-  <div *ngFor="let skill of worker.skills | keyvalue">
-    {{skill.key}}<mat-progress-bar class="example-margin" color="warn" [value]="skill.value"
-      [bufferValue]="skill.value">
-    </mat-progress-bar>
-  </div>
+  <mat-card class="mat-card-default">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{worker.name}}</mat-card-title>
+      <mat-card-subtitle>{{worker.description}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <img mat-card-image
+      src="https://http2.mlstatic.com/cachorros-border-collie-aceptamos-tarjeta-D_NQ_NP_664059-MLA27621638938_062018-Q.jpg"
+      alt="Photo of a Shiba Inu">
+
+    <mat-card-content>
+      <p>
+        Aqui ira una descripción chula. Arriba Wynats y abajo Victor Robles
+      </p>
+      <mat-list>
+        <h3 matSubheader>Skills</h3>
+        <mat-list-item *ngFor="let skill of worker.skills | keyvalue">
+          <mat-icon matListIcon>info</mat-icon>
+          <h4 matLine>{{skill.key}}</h4>
+          <p matLine class="demo-2">
+            {{skill.value / 10}}/10 <mat-progress-bar class="example-margin" color="warn" [value]="skill.value"
+              [bufferValue]="skill.value">
+            </mat-progress-bar>
+          </p>
+        </mat-list-item>
+        <mat-divider [inset]="true"></mat-divider>
+
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>CONTACTA CONMIGO</button>
+      <button mat-button>YOUTUBE</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
