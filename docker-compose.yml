@@ -1,0 +1,25 @@
+version: '3.3'
+services: 
+
+   portfolio-ui:
+     build:
+       context: ./
+       dockerfile: DockerfileAngular 
+       args:
+         url: https://github.com/Wynats/wynats-portfolio-ui.git
+         project: wynats-portfolio-ui
+         configuration: production
+     container_name: wynats-portfolio-ui
+     ports: #Comentado para no exponerlo hacia fuera
+       - 4200:4200
+     image: wynats-portfolio-ui
+
+
+
+
+
+      
+
+
+
+
